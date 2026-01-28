@@ -1,0 +1,9 @@
+{
+  "name": "local-plugins",
+  "description": "Local custom plugins",
+  "version": "1.0.0",
+  "author": {
+    "name": "Matthew Beltran",
+    "email": "matt.beltran@ticketmaster.com"
+  }
+}
