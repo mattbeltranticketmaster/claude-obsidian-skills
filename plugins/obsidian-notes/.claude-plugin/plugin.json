@@ -1,0 +1,9 @@
+{
+  "name": "obsidian-notes",
+  "description": "Save notes and analyses to Obsidian vault with proper formatting",
+  "version": "1.0.0",
+  "author": {
+    "name": "Matthew Beltran",
+    "email": "matt.beltran@ticketmaster.com"
+  }
+}
