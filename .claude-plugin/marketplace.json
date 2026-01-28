@@ -1,9 +1,21 @@
 {
   "name": "local-plugins",
-  "description": "Local custom plugins",
-  "version": "1.0.0",
-  "author": {
+  "description": "Local custom plugins for personal use",
+  "owner": {
     "name": "Matthew Beltran",
     "email": "matt.beltran@ticketmaster.com"
-  }
+  },
+  "plugins": [
+    {
+      "name": "obsidian-notes",
+      "description": "Save notes and analyses to Obsidian vault with proper formatting",
+      "version": "1.0.0",
+      "author": {
+        "name": "Matthew Beltran",
+        "email": "matt.beltran@ticketmaster.com"
+      },
+      "source": "./plugins/obsidian-notes",
+      "category": "productivity"
+    }
+  ]
 }
