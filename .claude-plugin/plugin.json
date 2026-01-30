@@ -1,0 +1,20 @@
+{
+  "name": "obsidian-notes",
+  "description": "Save notes and analyses to Obsidian vault with proper formatting",
+  "version": "1.0.0",
+  "author": {
+    "name": "Matthew Beltran"
+  },
+  "homepage": "https://github.com/YOUR_USERNAME/claude-obsidian-skills",
+  "repository": "https://github.com/YOUR_USERNAME/claude-obsidian-skills",
+  "license": "MIT",
+  "keywords": [
+    "obsidian",
+    "notes",
+    "knowledge-management",
+    "action-items",
+    "productivity",
+    "claude-code",
+    "claude-plugin"
+  ]
+}
