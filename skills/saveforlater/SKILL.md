@@ -1,3 +1,8 @@
+---
+name: saveforlater
+description: Automatically capture conversation context and save to Obsidian to resume later
+---
+
 # Save Context for Later
 
 Automatically capture the current conversation context and save it to Obsidian so you can resume exactly where you left off.
