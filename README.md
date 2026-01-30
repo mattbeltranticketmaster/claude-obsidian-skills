@@ -43,7 +43,7 @@ Save the current conversation context to resume later:
 
 1. **Clone this repository**:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/claude-obsidian-skills.git
+   git clone https://github.com/mattbeltranticketmaster/claude-obsidian-skills.git
    cd claude-obsidian-skills
    ```
 
@@ -208,8 +208,8 @@ MIT License - See [LICENSE](LICENSE) for details.
 
 ## Support
 
-- **Issues**: [GitHub Issues](https://github.com/YOUR_USERNAME/claude-obsidian-skills/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/YOUR_USERNAME/claude-obsidian-skills/discussions)
+- **Issues**: [GitHub Issues](https://github.com/mattbeltranticketmaster/claude-obsidian-skills/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/mattbeltranticketmaster/claude-obsidian-skills/discussions)
 
 ## Changelog
 
