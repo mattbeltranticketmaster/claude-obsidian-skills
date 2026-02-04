@@ -1,221 +1,356 @@
-# Claude Obsidian Skills
+# Claude Obsidian Skills - Meeting Intelligence System
 
-A collection of Claude Code skills for seamless Obsidian integration. Capture notes, track action items, and manage your knowledge base directly from Claude conversations.
+Transform your Obsidian vault into a powerful meeting intelligence system with structured notes, smart action tracking, automated digests, and optional cloud sync.
 
-## Features
+**Version 2.1.0** - Latest update: Box vault support for cloud backup and cross-device access!
 
-### `/note` - Smart Note Capture
-Save notes to your Obsidian vault with intelligent session tracking:
-- **Session-based workflow**: Notes append to the active session automatically
-- **Smart organization**: Content is structured with proper headers and formatting
-- **YAML frontmatter**: Auto-generates metadata, tags, and timestamps
-- **Multiple folders**: Organize notes into Dailies, Tasks, Planning, etc.
+---
 
-### `/whatamidoing` - Action Item Scanner
-Scan your entire Obsidian vault for uncompleted action items:
-- **Comprehensive scanning**: Finds all `- [ ]` checkboxes across your vault
-- **Hierarchical display**: Groups by date → note → section
-- **Context-aware**: Shows file paths and note titles for easy reference
-- **Smart filtering**: Skips completed items, sorts by date
+## 🎯 Features
 
-### `/actionitem` - Quick Capture
-Instantly add action items without friction:
-- **Zero friction**: Just type the item and go
-- **Auto-appears in scanner**: Items show up when you run `/whatamidoing`
-- **Quick Capture file**: All items saved to a central capture list
-- **No interruptions**: No confirmation prompts, just fast capture
+### Meeting Intelligence
+- **🎤 Parse meeting transcripts** - Convert messy notes into structured summaries
+- **📊 Smart action tracking** - Extract action items with owners, due dates, and metadata
+- **🏷️ Auto-tagging** - Automatic meeting type and project tagging
+- **🔍 Advanced filtering** - Find exactly what you need with powerful filters
+- **📈 Weekly digests** - Automated summaries with analytics and insights
 
-### `/saveforlater` - Context Preservation
-Save the current conversation context to resume later:
-- **Automatic extraction**: Analyzes conversation and extracts key points
-- **Comprehensive capture**: Files, decisions, status, next steps
-- **Resume-ready**: Everything you need to pick up where you left off
-- **Structured format**: Organized sections for easy scanning
+### Note Management
+- **✍️ Session-based notes** - Notes append to active sessions automatically
+- **☁️ Box vault sync** - Optional cloud backup when ending sessions
+- **⚡ Local-first workflow** - Fast, reliable note-taking
+- **📂 Smart organization** - YAML frontmatter with metadata and tags
 
-## Installation
+### Action Item Tracking
+- **⚡ Quick capture** - Zero-friction action item creation
+- **🎯 Rich metadata** - Owners, due dates, projects, priorities
+- **🔴🟡🟢 Status indicators** - Overdue, due soon, stale detection
+- **🔍 Comprehensive scanning** - Find all action items across your vault
+
+---
+
+## 📚 Available Skills
+
+### `/meeting-notes` - Meeting Intelligence Parser
+Parse meeting transcripts from any source and generate structured summaries.
+
+**What it does:**
+- Extracts decisions, discussions, and action items automatically
+- Auto-assigns owners and due dates from context
+- Smart tagging by meeting type and project
+- Supports Confluence, Teams, or raw text input
+
+**Example:**
+```
+/meeting-notes
+[paste your messy meeting notes]
+```
+
+---
+
+### `/note` - Save Structured Notes
+Save notes to your Obsidian vault with session tracking and optional Box sync.
+
+**Features:**
+- Session-based note tracking - append to active notes
+- Local-first workflow for speed and reliability
+- Optional Box sync when ending sessions
+- Smart folder organization
+
+**Example:**
+```
+/note
+[your notes]
+
+/note
+[additional updates]
+
+/note end
+# Prompts: "Would you like to copy this note to Box?"
+```
+
+---
+
+### `/actionitem` - Quick Action Capture
+Instantly add action items with rich metadata.
+
+**Simple format:**
+```
+/actionitem Review the API documentation
+```
+
+**Enhanced format:**
+```
+/actionitem Review API docs @TianaSmith #2026-02-10 {{project:gco, priority:high}}
+```
+
+**Components:**
+- `@owner` - Person responsible
+- `#YYYY-MM-DD` - Due date
+- `{{key:value}}` - Metadata tags
+
+---
+
+### `/whatamidoing` - Smart Action Scanner
+Scan your vault for action items with powerful filtering.
+
+**Examples:**
+```
+/whatamidoing                      # All items
+/whatamidoing @me                  # Your items
+/whatamidoing @me overdue          # Your overdue items
+/whatamidoing project:gco          # Project-specific items
+/whatamidoing this-week            # Due this week
+```
+
+**Features:**
+- 🔴 Overdue items
+- 🟡 Due within 3 days
+- 🟢 Due later / no due date
+- ⚠️ Stale items (>14 days old)
+
+---
+
+### `/digest` - Weekly Action Digest
+Generate comprehensive action item summaries with analytics.
+
+**Examples:**
+```
+/digest                   # Weekly digest
+/digest @me              # Your personal digest
+/digest project:gco      # Project status
+/digest overdue          # Overdue items only
+```
+
+**What you get:**
+- 📊 Summary statistics
+- 🎯 Items grouped by status and owner
+- 💡 Actionable insights
+- 📈 Analytics by project and priority
+
+---
+
+### `/tutorial` - Interactive Tutorial
+Learn the system with hands-on exercises.
+
+```
+/tutorial
+```
+
+Guides you through 6 levels:
+1. First meeting note
+2. Action item mastery
+3. Filtering power
+4. Weekly digests
+5. Note sessions & Box sync
+6. Workflow integration
+
+---
+
+## 🚀 Installation
 
 ### Prerequisites
 
 - [Claude Code CLI](https://code.claude.com/) installed
 - An Obsidian vault
+- (Optional) Box account for cloud sync
 
 ### Quick Setup
 
-1. **Clone this repository**:
+1. **Add to Claude Code marketplace**:
    ```bash
-   git clone https://github.com/mattbeltranticketmaster/claude-obsidian-skills.git
-   cd claude-obsidian-skills
+   claude plugin marketplace add https://github.com/mattbeltranticketmaster/claude-obsidian-skills.git
+   claude plugin install obsidian-notes
    ```
 
-2. **Update vault path** in each skill file:
-   - Edit `skills/note/SKILL.md` and update the vault location (line 11)
-   - Edit `skills/whatamidoing/SKILL.md` and update the vault location (line 11)
-   - Edit `skills/actionitem/SKILL.md` and update the vault location (line 11)
-   - Edit `skills/saveforlater/SKILL.md` and update the vault location (line 6)
+2. **Update vault paths** in skill files to match your setup:
+   - Local vault: `/Users/your-username/Documents/Obsidian Vault`
+   - Box vault (optional): `~/Library/CloudStorage/Box-Box/Notes/Obsidian Vault`
 
-   Change from:
-   ```
-   `/Users/matthew.beltran/Documents/Obsidian Vault`
-   ```
-
-   To your vault path:
-   ```
-   `/Users/your-username/path/to/your/Obsidian Vault`
-   ```
-
-3. **Install the plugin**:
-   ```bash
-   claude plugin install ~/path/to/claude-obsidian-skills
-   ```
-
-4. **Verify installation**:
+3. **Try it out**:
    ```bash
    claude
-   # In Claude, type: /obsidian-notes:
-   # You should see autocomplete suggestions for all skills
+   # Type: /meeting-notes or /note or /actionitem
    ```
 
-### Alternative: Local Development Mode
+---
 
-Test without installing:
-```bash
-claude --plugin-dir ~/path/to/claude-obsidian-skills
+## 📖 Usage
+
+### Quick Start Workflow
+
+**After a meeting:**
+```
+/meeting-notes
+[paste your meeting notes or transcript]
 ```
 
-## Usage
-
-### Taking Notes
-
-**Start a new note session**:
+**Quick action capture:**
 ```
-/obsidian-notes:note new
+/actionitem Follow up with John @me #2026-02-10 {{project:gco}}
 ```
 
-**Add content to active session**:
+**Check what you need to do:**
 ```
-/obsidian-notes:note Here are my thoughts on the API design...
-```
-
-**End the current session**:
-```
-/obsidian-notes:note end
+/whatamidoing @me
 ```
 
-### Managing Action Items
-
-**Add a quick action item**:
+**Weekly review:**
 ```
-/obsidian-notes:actionitem Review the pull request feedback
+/digest weekly
 ```
 
-**See all uncompleted action items**:
-```
-/obsidian-notes:whatamidoing
-```
+---
 
-### Saving Context
+## ☁️ Box Vault Setup (Optional)
 
-**Save conversation to resume later**:
-```
-/obsidian-notes:saveforlater
-```
+### Why Box Sync?
 
-## Customization
+- **Cloud backup** - Protection against local drive issues
+- **Cross-device access** - Work from anywhere
+- **Team sharing** - Share meeting notes via Box
+- **Selective sync** - Choose what to back up
 
-### Adding Custom Folders
+### Setup Steps
 
-Edit `skills/note/SKILL.md` and add your folder to the "Available Folders" section:
-
-```markdown
-## Available Folders
-- Dailies (for daily notes)
-- Tasks (for task-related notes)
-- YourNewFolder (for your custom notes)
-```
-
-### Changing Note Format
-
-Modify the "Example Note Format" section in `skills/note/SKILL.md` to customize the YAML frontmatter and structure.
-
-### Adjusting Action Item Format
-
-Edit `skills/actionitem/SKILL.md` to change the capture file name or checkbox format.
-
-## Plugin Structure
-
-```
-claude-obsidian-skills/
-├── .claude-plugin/
-│   └── plugin.json          # Plugin manifest
-├── skills/
-│   ├── note/
-│   │   └── SKILL.md         # Note capture skill
-│   ├── actionitem/
-│   │   └── SKILL.md         # Quick capture skill
-│   ├── whatamidoing/
-│   │   └── SKILL.md         # Action item scanner
-│   └── saveforlater/
-│       └── SKILL.md         # Context preservation
-├── README.md                # This file
-├── CONTRIBUTING.md          # Contribution guide
-└── LICENSE                  # MIT License
-```
-
-## Troubleshooting
-
-### Skills not showing up
-
-1. Check plugin is installed:
+1. **Ensure Box is installed and syncing**:
    ```bash
-   claude plugin list
+   ls ~/Library/CloudStorage/Box-Box
    ```
 
-2. Verify plugin structure:
+2. **Create Box vault structure**:
    ```bash
-   ls -la ~/path/to/claude-obsidian-skills/.claude-plugin/
-   # Should see: plugin.json
+   mkdir -p ~/Library/CloudStorage/Box-Box/Notes/"Obsidian Vault"/{Dailies,Tasks,1v1s,Planning}
    ```
 
-3. Reinstall:
-   ```bash
-   claude plugin uninstall obsidian-notes
-   claude plugin install ~/path/to/claude-obsidian-skills
-   ```
+3. **Use the workflow**:
+   - All notes save locally first (fast)
+   - When you run `/note end`, choose to copy to Box
+   - Box automatically syncs to cloud
 
-### "File not found" errors
+---
 
-Make sure you updated the vault path in all skill files to match your actual Obsidian vault location.
+## 🔧 Configuration
 
-### Action items not appearing
+### Vault Locations
 
-- Check that items are formatted as `- [ ]` (space between brackets)
-- Verify the files are markdown (`.md`)
-- Run `/whatamidoing` again after adding items with `/actionitem`
+**Local Vault (Primary):**
+`/Users/matthew.beltran/Documents/Obsidian Vault`
 
-## Contributing
+**Box Vault (Optional):**
+`~/Library/CloudStorage/Box-Box/Notes/Obsidian Vault`
 
-Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+### Available Folders
+- **Dailies** - Daily notes and meeting notes
+- **1v1s** - One-on-one meeting notes
+- **Planning** - Planning sessions
+- **Tasks** - Task-focused notes
+- **Org Planning** - Organizational planning
+- **AIMS** - AIMS-related work
+- **Installment** - Installment/payment work
+- **Interviews** - Interview notes
 
-## Version
+---
 
-- **Version**: 1.0.0
-- **Last Updated**: January 2026
-- **Claude Code Compatibility**: v0.1.0+
+## 📚 Documentation
 
-## License
+- **[README.md](plugins/obsidian-notes/README.md)** - Full documentation
+- **[QUICK_START.md](plugins/obsidian-notes/QUICK_START.md)** - 5-minute quickstart
+- **[WALKTHROUGH.md](plugins/obsidian-notes/WALKTHROUGH.md)** - Comprehensive guide
+- **[Tutorial](/tutorial)** - Interactive hands-on tutorial
 
-MIT License - See [LICENSE](LICENSE) for details.
+---
 
-## Support
+## 💡 Pro Tips
 
-- **Issues**: [GitHub Issues](https://github.com/mattbeltranticketmaster/claude-obsidian-skills/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/mattbeltranticketmaster/claude-obsidian-skills/discussions)
+### 1. Use Consistent Naming
+- ✅ `@TianaSmith` everywhere
+- ❌ Don't mix `@Tiana`, `@TianaS`, `@tsmith`
 
-## Changelog
+### 2. Set Realistic Due Dates
+Use due dates sparingly for truly time-sensitive items.
+
+### 3. Review Regularly
+- **Daily**: Check `@me overdue`
+- **Weekly**: Run `/digest weekly`
+- **Monthly**: Clean up stale items
+
+### 4. Sync Important Notes to Box
+Use `/note end` to copy important meeting notes to Box for:
+- Cloud backup
+- Cross-device access
+- Team sharing
+
+---
+
+## 📈 What's Next
+
+### Roadmap for 2.2
+- [ ] Integration with calendar for automatic meeting detection
+- [ ] Slack digest notifications
+- [ ] Completion velocity tracking
+- [ ] Team dashboards
+
+### Roadmap for 3.0
+- [ ] Natural language date parsing ("next Friday" → `#2026-02-07`)
+- [ ] Recurring task templates
+- [ ] Meeting agenda generation
+- [ ] Integration with Jira/Linear
+
+---
+
+## 🐛 Troubleshooting
+
+**Action items not showing up:**
+- Ensure checkbox format is `- [ ]` (space inside brackets)
+- Check file is in vault directory
+- Verify `.md` extension
+
+**Filters not working:**
+- Check spelling of filter keywords
+- Ensure date format is `YYYY-MM-DD`
+
+**Box sync not working:**
+- Verify Box is installed and syncing
+- Check Box folder exists
+- Ensure sufficient disk space
+
+---
+
+## 📝 Changelog
+
+### v2.1.0 (February 2026)
+- **NEW**: Box vault support for cloud backup and sync
+- **ENHANCED**: `/note` now offers optional Box sync on session end
+- **ADDED**: Local-first workflow with on-demand cloud backup
+- **ADDED**: Dual-vault architecture
+
+### v2.0.0 (February 2026)
+- **NEW**: `/meeting-notes` skill for meeting transcript parsing
+- **NEW**: `/digest` skill for action item summaries and analytics
+- **ENHANCED**: `/actionitem` with owner, due date, and metadata
+- **ENHANCED**: `/whatamidoing` with filtering and stale detection
+- **ADDED**: Status indicators (🔴 🟡 🟢 ⚠️)
 
 ### v1.0.0 (January 2026)
 - Initial release
 - Note capture with session tracking
 - Action item scanner
 - Quick capture skill
-- Context preservation skill
+
+---
+
+## 👤 Author
+
+**Matthew Beltran**
+matt.beltran@ticketmaster.com
+
+---
+
+## 📄 License
+
+Private - Internal Use Only
+
+---
+
+**Ready to transform your meeting notes into actionable intelligence? Start with `/meeting-notes` or `/tutorial` today!** 🚀
