@@ -49,7 +49,7 @@ Parse meeting transcripts from any source and generate structured summaries.
 ---
 created: 2026-02-03
 tags: [meeting, weekly-sync, gco, aunz]
-attendees: [TianaSmith, KarinSparring]
+attendees: [JohnSmith, JaneSmith]
 ---
 
 # AU/NZ GCO Weekly Sync - 2026-02-03
@@ -58,8 +58,8 @@ attendees: [TianaSmith, KarinSparring]
 - Approved Exchange/Upgrade solution for Q4
 
 ## Action Items
-- [ ] Complete sign-off @TianaSmith #2026-02-10 {{project:gco, priority:high}}
-- [ ] Update docs @KarinSparring #2026-02-05 {{project:gco}}
+- [ ] Complete sign-off @JohnSmith #2026-02-10 {{project:gco, priority:high}}
+- [ ] Update docs @JaneSmith #2026-02-05 {{project:gco}}
 ```
 
 ---
@@ -75,7 +75,7 @@ Quickly add action items with rich metadata.
 
 **Enhanced format:**
 ```
-/actionitem Review API docs @TianaSmith #2026-02-10 {{project:gco, priority:high}}
+/actionitem Review API docs @JohnSmith #2026-02-10 {{project:gco, priority:high}}
 ```
 
 **Components:**
@@ -98,7 +98,7 @@ Scan your vault for action items with powerful filtering.
 
 **Filter by owner:**
 ```
-/whatamidoing @TianaSmith
+/whatamidoing @JohnSmith
 /whatamidoing @me
 ```
 
@@ -251,7 +251,7 @@ Save notes to your Obsidian vault with session tracking and optional cloud sync.
 ### Components
 
 **Owner (`@username`):**
-- `@TianaSmith` - Specific person
+- `@JohnSmith` - Specific person
 - `@me` - Yourself
 - Optional - can be omitted
 
@@ -270,10 +270,10 @@ Save notes to your Obsidian vault with session tracking and optional cloud sync.
 
 ```markdown
 - [ ] Simple task with no metadata
-- [ ] Task with owner @TianaSmith
+- [ ] Task with owner @JohnSmith
 - [ ] Task with due date #2026-02-10
 - [ ] Task with project tag {{project:gco}}
-- [ ] Complete task @TianaSmith #2026-02-10 {{project:gco, priority:high}}
+- [ ] Complete task @JohnSmith #2026-02-10 {{project:gco, priority:high}}
 ```
 
 ---
@@ -306,8 +306,8 @@ Save notes to your Obsidian vault with session tracking and optional cloud sync.
 
 ### 1. Use Consistent Naming
 Use consistent names for owners across all notes:
-- ✅ `@TianaSmith`
-- ❌ `@Tiana`, `@tsmith`, `@TianaS`
+- ✅ `@JohnSmith`
+- ❌ `@John`, `@jsmith`, `@JohnS`
 
 ### 2. Set Realistic Due Dates
 Use due dates sparingly for truly time-sensitive items:
@@ -337,9 +337,9 @@ Use digests for different audiences:
 ### Vault Locations
 
 **Local Vault (Primary):**
-`/Users/matthew.beltran/Documents/Obsidian Vault`
+`/Users/your-username/Documents/Obsidian Vault`
 
-All notes are saved here first for fast, reliable access.
+All notes are saved here first for fast, reliable access. Update the vault path in the skill configuration to match your actual location.
 
 **Box Vault (Optional Backup/Sync):**
 `~/Library/CloudStorage/Box-Box/Notes/Obsidian Vault`
@@ -347,33 +347,18 @@ All notes are saved here first for fast, reliable access.
 When ending a note session with `/note end`, you'll be prompted to optionally copy the note to Box for cloud backup and sync.
 
 ### Available Folders
+
+The plugin supports organizing notes into folders. Default examples:
 - **Dailies** - Daily notes and meeting notes
 - **1v1s** - One-on-one meeting notes
 - **Planning** - Planning sessions
 - **Tasks** - Task-focused notes
-- **Org Planning** - Organizational planning
+
+You can add custom folders by editing the skill configuration files to match your workflow.
 
 ### Session File
 Active note sessions are tracked in:
 `~/.claude/active-note-session.txt`
-
----
-
-## 📈 What's Next
-
-### Roadmap for 2.1
-- [ ] Integration with calendar for automatic meeting detection
-- [ ] Notion export support
-- [ ] Slack digest notifications
-- [ ] Completion velocity tracking
-- [ ] Team dashboards
-
-### Roadmap for 3.0
-- [ ] Natural language date parsing ("next Friday" → `#2026-02-07`)
-- [ ] Recurring task templates
-- [ ] Meeting agenda generation
-- [ ] AI-powered action item suggestions
-- [ ] Integration with Jira/Linear
 
 ---
 

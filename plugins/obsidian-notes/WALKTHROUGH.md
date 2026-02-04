@@ -64,7 +64,7 @@ You'll see something like this:
 created: 2026-02-03
 tags: [meeting, weekly-sync, gco, aunz]
 meeting_date: 2026-02-03
-attendees: [TianaSmith, KarinSparring, MatthewBeltran]
+attendees: [JohnSmith, JaneSmith, AlexJones]
 meeting_type: weekly-sync
 ---
 
@@ -77,9 +77,9 @@ Weekly sync for AU/NZ GCO rollout team to discuss Q4 scaling progress.
 - **Exchange Solution Approved**: Approved Exchange and Upgrade solution for Q4 delivery. This unblocks scaling to 100%.
 
 ## Action Items
-- [ ] Talk to Quin about timeline @MatthewBeltran #2026-02-10 {{project:gco}}
-- [ ] Update Confluence @KarinSparring #2026-02-07 {{project:gco}}
-- [ ] Market signoff @TianaSmith #2026-02-15 {{project:gco}}
+- [ ] Talk to Quin about timeline @AlexJones #2026-02-10 {{project:gco}}
+- [ ] Update Confluence @JaneSmith #2026-02-07 {{project:gco}}
+- [ ] Market signoff @JohnSmith #2026-02-15 {{project:gco}}
 
 ## Follow-ups / Open Questions
 - Still need to finalize Booking Protect timing
@@ -213,7 +213,7 @@ Type:
 - [ ] Submit expense report @me #2026-02-05
 
 ### 2026-02-03 - Quick Capture
-- [ ] Talk to Quin @MatthewBeltran #2026-02-10 {{project:gco}}
+- [ ] Talk to Quin @AlexJones #2026-02-10 {{project:gco}}
 
 ## 🟢 Future / No Due Date (4 items)
 
@@ -221,7 +221,7 @@ Type:
 - [ ] Review security audit findings
 - [ ] Schedule team retro @me
 - [ ] Deploy staging environment @DevOpsTeam #2026-02-06 {{project:gco}}
-- [ ] Update Confluence @KarinSparring #2026-02-07 {{project:gco}}
+- [ ] Update Confluence @JaneSmith #2026-02-07 {{project:gco}}
 
 ---
 Summary: 8 total items | 1 overdue | 3 due this week | 4 future/no date
@@ -547,8 +547,8 @@ Copy/paste digest output to Slack or email
 ### Tip 1: Consistent Naming
 
 **Use same format for owners:**
-- ✅ `@TianaSmith` everywhere
-- ❌ Don't mix `@Tiana`, `@TianaS`, `@tsmith`
+- ✅ `@JohnSmith` everywhere
+- ❌ Don't mix `@John`, `@JohnS`, `@jsmith`
 
 **Why?** Filtering breaks with inconsistent names.
 
@@ -621,7 +621,7 @@ Save this as a snippet:
 ```markdown
 GCO Weekly Sync - [DATE]
 
-Attendees: Tiana, Karin, Matt
+Attendees: John, Jane, Alex
 
 Progress:
 -

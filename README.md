@@ -81,7 +81,7 @@ Instantly add action items with rich metadata.
 
 **Enhanced format:**
 ```
-/actionitem Review API docs @TianaSmith #2026-02-10 {{project:gco, priority:high}}
+/actionitem Review API docs @JohnSmith #2026-02-10 {{project:gco, priority:high}}
 ```
 
 **Components:**
@@ -235,20 +235,22 @@ Guides you through 6 levels:
 ### Vault Locations
 
 **Local Vault (Primary):**
-`/Users/matthew.beltran/Documents/Obsidian Vault`
+`/Users/your-username/Documents/Obsidian Vault`
 
 **Box Vault (Optional):**
 `~/Library/CloudStorage/Box-Box/Notes/Obsidian Vault`
 
+Update these paths in the skill configuration files to match your actual vault locations.
+
 ### Available Folders
+
+The plugin supports organizing notes into folders. Default examples:
 - **Dailies** - Daily notes and meeting notes
 - **1v1s** - One-on-one meeting notes
 - **Planning** - Planning sessions
 - **Tasks** - Task-focused notes
-- **Org Planning** - Organizational planning
-- **AIMS** - AIMS-related work
-- **Installment** - Installment/payment work
-- **Interviews** - Interview notes
+
+You can customize these folders in the skill configuration to match your workflow.
 
 ---
 
@@ -264,8 +266,8 @@ Guides you through 6 levels:
 ## 💡 Pro Tips
 
 ### 1. Use Consistent Naming
-- ✅ `@TianaSmith` everywhere
-- ❌ Don't mix `@Tiana`, `@TianaS`, `@tsmith`
+- ✅ `@JohnSmith` everywhere
+- ❌ Don't mix `@John`, `@JohnS`, `@jsmith`
 
 ### 2. Set Realistic Due Dates
 Use due dates sparingly for truly time-sensitive items.
@@ -280,22 +282,6 @@ Use `/note end` to copy important meeting notes to Box for:
 - Cloud backup
 - Cross-device access
 - Team sharing
-
----
-
-## 📈 What's Next
-
-### Roadmap for 2.2
-- [ ] Integration with calendar for automatic meeting detection
-- [ ] Slack digest notifications
-- [ ] Completion velocity tracking
-- [ ] Team dashboards
-
-### Roadmap for 3.0
-- [ ] Natural language date parsing ("next Friday" → `#2026-02-07`)
-- [ ] Recurring task templates
-- [ ] Meeting agenda generation
-- [ ] Integration with Jira/Linear
 
 ---
 
