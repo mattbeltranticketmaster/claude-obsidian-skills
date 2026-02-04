@@ -1,7 +1,7 @@
 {
   "name": "obsidian-notes",
-  "description": "Meeting intelligence system with structured notes, action tracking, and smart digests for Obsidian vault",
-  "version": "2.0.0",
+  "description": "Meeting intelligence system with structured notes, action tracking, smart digests, and optional Box cloud sync for Obsidian vault",
+  "version": "2.1.0",
   "author": {
     "name": "Matthew Beltran",
     "email": "matt.beltran@ticketmaster.com"
