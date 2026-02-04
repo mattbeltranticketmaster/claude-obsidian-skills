@@ -64,10 +64,12 @@ Feature suggestions are welcome! Please open an issue with:
    ```
 
 4. **Try each skill**:
-   - `/obsidian-notes:note` - Test note creation and session tracking
-   - `/obsidian-notes:actionitem` - Test quick capture
-   - `/obsidian-notes:whatamidoing` - Test scanning with various note structures
-   - `/obsidian-notes:saveforlater` - Test context preservation
+   - `/note` - Test note creation, session tracking, and Box sync
+   - `/actionitem` - Test quick capture with metadata
+   - `/whatamidoing` - Test scanning with filters
+   - `/meeting-notes` - Test meeting transcript parsing
+   - `/digest` - Test digest generation with analytics
+   - `/tutorial` - Test interactive tutorial flow
 
 ### Testing Checklist
 
@@ -173,10 +175,12 @@ We follow [Semantic Versioning](https://semver.org/):
 - MINOR: New features (backward compatible)
 - PATCH: Bug fixes
 
-Update version in:
-- `.claude-plugin/plugin.json`
-- `README.md` (Version section)
-- `README.md` (Changelog section)
+When releasing a new version, update:
+- `plugins/obsidian-notes/.claude-plugin/plugin.json` - version field
+- `README.md` - Version section at top
+- `plugins/obsidian-notes/README.md` - Version section and changelog
+- `CHANGELOG.md` - Add new version entry with all changes
+- Create a git tag: `git tag v2.1.0 && git push origin v2.1.0`
 
 ## Pull Request Guidelines
 
